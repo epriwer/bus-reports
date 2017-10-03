@@ -1,1 +1,2 @@
 - A bus' Status is considered Late if it deviates from the timetable by 5 or more minutes.
+- If Route Variant does not comprise 3 numbers e.g. "UNKNOWN" then it will not be bolded.

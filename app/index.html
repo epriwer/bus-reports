@@ -8,9 +8,10 @@
 	</head>
 	<body>
     <div ng-controller="busReportsCtrl">
+      <h1>Bus Reports</h1>
       <ul>
         <li ng-repeat="busService in busReports.data">
-          {{busService.organisation}} - {{busService.date}}
+          <h2>{{busService.organisation}} - {{busService.date}}</h2>
           <table>
             <tr>
               <th>Bus ID</th>
@@ -19,7 +20,7 @@
             </tr>
             <tr ng-repeat="bus in busService.busData">
               <td>{{bus.busId}}</td>
-              <td>{{bus.routeVariant}}</td>
+              <td ng-bind-html="bus.routeVariant | formatRouteVariant"></td>
               <td class="bus-status" bus-status></td>
             </tr>
           </table>
