@@ -20,7 +20,7 @@
             <tr ng-repeat="bus in busService.busData">
               <td>{{bus.busId}}</td>
               <td>{{bus.routeVariant}}</td>
-              <td>{{bus.deviationFromTimetable}}</td>
+              <td class="bus-status" bus-status></td>
             </tr>
           </table>
         </li>

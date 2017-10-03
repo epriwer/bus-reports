@@ -1,0 +1,1 @@
+- A bus' Status is considered Late if it deviates from the timetable by 5 or more minutes.

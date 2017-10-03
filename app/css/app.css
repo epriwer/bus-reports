@@ -1,0 +1,12 @@
+.bus-status.on-time {
+  color: green;
+}
+.bus-status.late {
+  color: blue;
+}
+.bus-status.early {
+  color: red;
+}
+.bus-status.unknown {
+  color: orange;
+}
