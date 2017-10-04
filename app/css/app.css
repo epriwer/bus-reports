@@ -1,3 +1,11 @@
+body {
+  font-family: Sans-Serif;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
+
 .bus-status.on-time {
   color: green;
 }
@@ -11,17 +19,60 @@
   color: orange;
 }
 
-.organisation .header .arrow,
+.organisation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.organisation .header {
+  display: flex;
+  min-width: 400px;
+  padding-top: 20px;
+}
+
 .organisation .header .title {
-  display: inline-block;
+  line-height: 50px;
+}
+
+.organisation .header .title,
+.organisation .header .arrow {
+  height: 50px;
+  line-height: 50px;
+}
+
+.organisation .header .title h2 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.organisation .header .title {
+  flex: 1;
 }
 
 .organisation .header .arrow {
-    width: 24px;
-    height: 22px;
-    background: url("../images/arrow_down.png") no-repeat center center;
+  flex: 0 0 24px;
+  background: url("../images/arrow_down.png") no-repeat center center;
 }
 
 .organisation .header .arrow.expanded {
   background-image: url("../images/arrow_up.png");
+}
+
+.organisation .bus-details {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.organisation .bus-details tr {
+  border-top: 1px solid lightGray;
+}
+
+.organisation .bus-details tr:first-child {
+  background-color: lightBlue;
+}
+
+.organisation .bus-details td,
+.organisation .bus-details th {
+  padding: 10px;
 }

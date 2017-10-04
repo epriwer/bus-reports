@@ -15,7 +15,7 @@
             <div class="title"><h2>{{busService.organisation}} - {{busService.date}}</h2></div>
             <div class="arrow" ng-class="{'expanded': showDetails}"></div>
           </div>
-          <table ng-init="showDetails=false" ng-show="showDetails">
+          <table class="bus-details" ng-init="showDetails=false" ng-show="showDetails">
             <tr>
               <th>Bus ID</th>
               <th>Route Variant</th>
