@@ -10,3 +10,18 @@
 .bus-status.unknown {
   color: orange;
 }
+
+.organisation .header .arrow,
+.organisation .header .title {
+  display: inline-block;
+}
+
+.organisation .header .arrow {
+    width: 24px;
+    height: 22px;
+    background: url("../images/arrow_down.png") no-repeat center center;
+}
+
+.organisation .header .arrow.expanded {
+  background-image: url("../images/arrow_up.png");
+}
