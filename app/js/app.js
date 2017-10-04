@@ -8,6 +8,17 @@ app.controller('busReportsCtrl', ['$scope', function($scope) {
   { "organisation":"Westbus", "date":"25/09/2015", "busData":[ { "busId":"94811", "routeVariant":"664 2 1", "deviationFromTimetable":164 }, 
   { "busId":"62788", "routeVariant":"UNKNOWN", "deviationFromTimetable":null }, { "busId":"14221", "routeVariant":"834 1 1", "deviationFromTimetable":423 } ] } ] };
   
+  $scope.saveNotes = function(notes, index) {
+    
+    if(angular.isUndefined(notes) || notes === null || notes.trim() === "") {
+      return;
+    }
+    
+    if(angular.isUndefined($scope.busReports.data[index].notes) || $scope.busReports.data[index].notes === null) {
+      $scope.busReports.data[index].notes = [];
+    }
+    $scope.busReports.data[index].notes.push(notes);
+  }
 }]);
 
 app.directive('busStatus', function() {

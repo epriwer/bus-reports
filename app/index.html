@@ -15,18 +15,32 @@
             <div class="title"><h2>{{busService.organisation}} - {{busService.date}}</h2></div>
             <div class="arrow" ng-class="{'expanded': showDetails}"></div>
           </div>
-          <table class="bus-details" ng-init="showDetails=false" ng-show="showDetails">
-            <tr>
-              <th>Bus ID</th>
-              <th>Route Variant</th>
-              <th>Status</th>
-            </tr>
-            <tr ng-repeat="bus in busService.busData">
-              <td>{{bus.busId}}</td>
-              <td ng-bind-html="bus.routeVariant | formatRouteVariant"></td>
-              <td class="bus-status" bus-status></td>
-            </tr>
-          </table>
+          <div ng-init="showDetails=false" ng-show="showDetails" class="bus-details">
+            <table>
+              <tr>
+                <th>Bus ID</th>
+                <th>Route Variant</th>
+                <th>Status</th>
+              </tr>
+              <tr ng-repeat="bus in busService.busData">
+                <td>{{bus.busId}}</td>
+                <td ng-bind-html="bus.routeVariant | formatRouteVariant"></td>
+                <td class="bus-status" bus-status></td>
+              </tr>
+            </table>
+            <div class="notes">
+              <form name="notesForm">
+                <textarea ng-model="notes" rows="3" placeholder="Enter notes here" required></textarea>
+                <input type="button" ng-click="saveNotes(notes, $index); notes = null" ng-disabled="notesForm.$invalid" value="Save Notes" />
+              </form>
+              <div ng-show="busService.notes">
+                <br>Notes:
+                <ul>
+                  <li ng-repeat="note in busService.notes track by $index">{{note}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
